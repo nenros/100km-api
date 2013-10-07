@@ -15,6 +15,7 @@ class Aplikacja < Sinatra::Base
   end
 
   configure :production do
+    puts ENV['DATABASE_URL']
     ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
   end
 
