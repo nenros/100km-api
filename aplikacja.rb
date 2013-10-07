@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'pg'
 require 'sinatra/reloader' if development?
 
 Dir[File.dirname(__FILE__) + '/modele/*.rb'].each {|file| require file }
