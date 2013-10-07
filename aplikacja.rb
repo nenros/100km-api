@@ -14,11 +14,11 @@ class Aplikacja < Sinatra::Base
   end
 
   configure :production do
-
+    ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
   end
 
   get "/" do
-    puts "Hello word"
+    "Hello word"
   end
 
 end
