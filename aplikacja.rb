@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/json'
+require 'json'
 require 'pg'
 require 'sinatra/reloader' if development?
 
@@ -8,6 +10,10 @@ Dir[File.dirname(__FILE__) + '/kontrolery/*.rb'].each {|file| require file }
 
 class Aplikacja < Sinatra::Base
   register Sinatra::ActiveRecordExtension
+
+  helpers Sinatra::JSON
+
+  set :json_content_type, :js
 
   configure :development do
     register Sinatra::Reloader
@@ -18,8 +24,6 @@ class Aplikacja < Sinatra::Base
     ActiveRecord::Base.establish_connection(ENV['HEROKU_POSTGRESQL_GREEN_URL'])
   end
 
-  get "/" do
-    "Hello word"
-  end
+  register Sinatra::Kontrolery::Glowne
 
 end

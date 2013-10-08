@@ -1,14 +1,10 @@
 language: ruby
 rvm:
-  - 2.0.0
-
-after_success:
-          - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-          - git remote add heroku git@heroku.com:api-100km.git
-          - echo "Host heroku.com" >> ~/.ssh/config
-          - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
-          - echo "   CheckHostIP no" >> ~/.ssh/config
-          - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-          - heroku keys:clear
-          - yes | heroku keys:add
-          - yes | git push heroku master
+- 2.0.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: iXdWAScPBWJFYu9YrLDQqKhMUg2eLJTmaRXh67PtwGpdWgg1Mdlwh2MrFjTWbwt4T9xBKFem1aGUO/5fKiIwlkqQ1GeT1lgDey2YHpySsEDYpC3fKMNMQvNOH95ZmV0jie75rj8n3Gc2tnQk84H9wZTiwBDRQVZU1O7R5QIkz2k=
+  app: api-100km
+  on:
+    repo: nenros/100km-api
