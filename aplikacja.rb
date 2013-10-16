@@ -2,8 +2,8 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/json'
 require 'json'
-require 'pg' if production?
-require 'newrelic_rpm' if production?
+require 'pg' 
+require 'newrelic_rpm'
 require 'sinatra/reloader' if development?
 
 Dir[File.dirname(__FILE__) + '/modele/*.rb'].each {|file| require file }
