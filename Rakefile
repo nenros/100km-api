@@ -1,10 +1,12 @@
 require "./api"
 require "sinatra/activerecord/rake"
+begin
+  require "rspec/core/rake_task"
 
-require 'rspec/core'
-require 'rspec/core/rake_task'
-
-task :default => :spec
-
-desc "Rozpoczynanie wszystkich testów"
-RSpec::Core::RakeTask.new(:spec)
+  desc "Run all examples"
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.rspec_opts = %w[--color]
+    t.pattern = 'spec/*_spec.rb'
+  end
+rescue LoadError
+end
