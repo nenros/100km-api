@@ -1,4 +1,4 @@
-require "./aplikacja"
+require "./api"
 require "sinatra/activerecord/rake"
 
 require 'rspec/core'

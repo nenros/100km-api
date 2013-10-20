@@ -1,2 +1,2 @@
-require "./aplikacja"
-run Aplikacja.new
+require "./api"
+run Api.new

@@ -1,3 +1,3 @@
 class Wycieczki < ActiveRecord::Base
-  belongs_to :druzyna
+  belongs_to :unit
 end

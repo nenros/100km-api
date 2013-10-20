@@ -1,5 +1,5 @@
 ENV['RACK_ENV'] = 'test'
 
-require_relative '../aplikacja'
+require_relative '../api'
 require 'rspec'
 require 'rack/test'

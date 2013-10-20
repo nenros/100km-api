@@ -6,10 +6,10 @@ require 'pg'
 require 'newrelic_rpm'
 require 'sinatra/reloader' if development?
 
-Dir[File.dirname(__FILE__) + '/modele/*.rb'].each {|file| require file }
-Dir[File.dirname(__FILE__) + '/kontrolery/*.rb'].each {|file| require file }
+Dir[File.dirname(__FILE__) + '/models/*.rb'].each {|file| require file }
+Dir[File.dirname(__FILE__) + '/controllers/*.rb'].each {|file| require file }
 
-class Aplikacja < Sinatra::Base
+class Api < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
   helpers Sinatra::JSON
@@ -25,6 +25,6 @@ class Aplikacja < Sinatra::Base
     ActiveRecord::Base.establish_connection(ENV['HEROKU_POSTGRESQL_GREEN_URL'])
   end
 
-  register Sinatra::Kontrolery::Glowne
+  register Sinatra::Controllers::Main
 
 end

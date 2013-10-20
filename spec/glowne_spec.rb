@@ -4,7 +4,7 @@ describe 'Sprawdzenie glownych sciezek' do
   include Rack::Test::Methods
 
   def app
-    Aplikacja.new
+    Api.new
   end
 
   it "Czy hello world" do

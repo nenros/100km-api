@@ -1,6 +1,6 @@
 module Sinatra
-  module Kontrolery
-    module Glowne
+  module Controllers
+    module Main
 
       def self.registered(app)
 
