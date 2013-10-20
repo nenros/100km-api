@@ -1,7 +1,10 @@
 require "./api"
 require "sinatra/activerecord/rake"
+
 begin
   require "rspec/core/rake_task"
+
+  task :default => :spec
 
   desc "Run all examples"
   RSpec::Core::RakeTask.new(:spec) do |t|
