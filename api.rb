@@ -35,5 +35,6 @@ end
   end
 
   register Sinatra::Controllers::Main
+  register Sinatra::Controllers::Districts
 
 end
