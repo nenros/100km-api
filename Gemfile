@@ -6,6 +6,7 @@ gem "sinatra-contrib"
 gem "activerecord"
 gem "sinatra-activerecord"
 gem "bcrypt-ruby"
+gem "sinatra-cross_origin"
 
 group :development do
   gem "sqlite3"

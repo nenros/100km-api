@@ -5,7 +5,7 @@ module Sinatra
       def self.registered(app)
 
         app.get "/" do
-          json :odpowiedz => "Hello world!"
+          
         end
 
         app.get "/status" do
