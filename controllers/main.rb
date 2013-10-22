@@ -5,7 +5,8 @@ module Sinatra
       def self.registered(app)
 
         app.get "/" do
-          
+          response = {:units=>'malo', :km=>'jeszcze mniej'}
+          json response        
         end
 
         app.get "/status" do
