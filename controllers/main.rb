@@ -5,7 +5,7 @@ module Sinatra
       def self.registered(app)
 
         app.get "/" do
-          response = {:units=>'malo', :km=>'jeszcze mniej'}
+          response = {:units=>Unit.count, :km=>Event.sum(:km)}
           json response        
         end
 
