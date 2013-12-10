@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007223153) do
+ActiveRecord::Schema.define(version: 20131118111840) do
 
   create_table "districts", force: true do |t|
     t.string "name"
@@ -26,18 +26,22 @@ ActiveRecord::Schema.define(version: 20131007223153) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "unit_id"
   end
 
   create_table "units", force: true do |t|
     t.string   "name"
     t.integer  "scouts_number"
     t.string   "city"
-    t.string   "type"
+    t.string   "age"
     t.string   "male"
-    t.boolean  "active"
+    t.boolean  "active",        default: false
     t.string   "photo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "shortname"
+    t.integer  "user_id"
+    t.integer  "district_id"
   end
 
   create_table "users", force: true do |t|
@@ -45,11 +49,11 @@ ActiveRecord::Schema.define(version: 20131007223153) do
     t.string   "last_name"
     t.string   "phone_number"
     t.string   "email"
-    t.string   "password"
-    t.string   "salt"
+    t.string   "password_digest"
     t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "unit_id"
   end
 
 end

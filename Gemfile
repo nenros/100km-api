@@ -5,7 +5,7 @@ gem "sinatra"
 gem "sinatra-contrib"
 gem "activerecord"
 gem "sinatra-activerecord"
-gem "bcrypt-ruby"
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem "sinatra-cross_origin"
 
 group :development do

@@ -1,4 +1,4 @@
-module Sinatra
+
   module Controllers
     module Districts
 
@@ -10,12 +10,11 @@ module Sinatra
         end
 
         app.get "/district/:id" do |id|
-          districts = District.find(id)
-          json districts
+          district = District.find(id)
+          json district
         end
 
       end
 
     end
   end
-end
